@@ -40,7 +40,7 @@
                 </li>
                 <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="/Option_1">Option1</a>
+                        <a class="nav-link" href="/Option_1">SMU</a>
                     </li>
 
                     {% comment %} <div class="btn-group">
@@ -106,10 +106,22 @@
 
         <p>Click below!</p>
         <input type="Submit" name="Submit" value="Generate Graph" />
+        <br><br>
+        <p>Compare It!</p>
+        <input type="Submit" name="Submit" value="Compare" />
 
     </form>
 
     {% if submitbutton == "Generate Graph" %}
+    <img src="data:image/png;base64,{{image}}">
+    <div id="contentToPrint">
+        {{ csv|safe }}
+    </div>
+
+    <button type="button" onclick="getURL()">Download Graph</button>
+    <button type="button" onclick="tableToCSV()">Download CSV</button>
+    {%endif%}
+    {% if submitbutton == "Compare" %}
     <img src="data:image/png;base64,{{image}}">
     <div id="contentToPrint">
         {{ csv|safe }}
