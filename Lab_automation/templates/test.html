@@ -106,30 +106,21 @@
 
         <p>Click below!</p>
         <input type="Submit" name="Submit" value="Generate Graph" />
-        <br><br>
-        <p>Compare It!</p>
-        <input type="Submit" name="Submit" value="Compare" />
+        
 
     </form>
 
     {% if submitbutton == "Generate Graph" %}
     <img src="data:image/png;base64,{{image}}">
-    <div id="contentToPrint">
+     <div id="contentToPrint">
         {{ csv|safe }}
-    </div>
+    </div> 
 
     <button type="button" onclick="getURL()">Download Graph</button>
     <button type="button" onclick="tableToCSV()">Download CSV</button>
     {%endif%}
-    {% if submitbutton == "Compare" %}
-    <img src="data:image/png;base64,{{image}}">
-    <div id="contentToPrint">
-        {{ csv|safe }}
-    </div>
+    
 
-    <button type="button" onclick="getURL()">Download Graph</button>
-    <button type="button" onclick="tableToCSV()">Download CSV</button>
-    {%endif%}
     <script>
 
         function downloadObject(file_name, file_ext, blob_data) {
@@ -198,7 +189,7 @@
             CSVFile = new Blob([csv_data], {
                 type: "text/csv"
             });
-            downloadObject('readings', '.csv', CSVFile)
+            downloadObject('Readings', '.csv', CSVFile)
             // Create to temporary link to initiate
             // download process
 

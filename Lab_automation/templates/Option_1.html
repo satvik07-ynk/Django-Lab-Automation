@@ -98,11 +98,11 @@
         <p>Boltzman Constant(in Joules/Kelvin):1.38e-23</p> {% endcomment %}
 
         <p>Click below!</p>
-        <input type="Submit" name="Submit" value="Generate Graph" />
+        <input type="Submit" name="Submit" value="Submit" />
 
     </form>
 
-    {% if submitbutton == "Generate Graph" %}
+    {% if submitbutton == "Submit" %}
     <img src="data:image/png;base64,{{image}}">
     <div id="contentToPrint">
         {{ csv|safe }}
@@ -179,7 +179,7 @@
             CSVFile = new Blob([csv_data], {
                 type: "text/csv"
             });
-            downloadObject('readings', '.csv', CSVFile)
+            downloadObject('Readings_SMU', '.csv', CSVFile)
             // Create to temporary link to initiate
             // download process
 
